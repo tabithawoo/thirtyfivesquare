@@ -1,0 +1,2 @@
+(self.webpackChunkthirtyfivesquare=self.webpackChunkthirtyfivesquare||[]).push([[551],{2551:function(e,t,n){"use strict";n.r(t),n.d(t,{default:function(){return s}});var r=n(7294),u=n(5643);function s(e){var t=e.data.newestPost.nodes[0];return r.createElement(u.JD,{post:t})}}}]);
+//# sourceMappingURL=component---src-pages-news-index-js-1d8aa1cec264ee729b36.js.map
