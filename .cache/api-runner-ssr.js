@@ -10,10 +10,6 @@ var plugins = [{
       name: 'gatsby-plugin-react-helmet',
       plugin: require('C:/Users/tabit/OneDrive/Documents/ThirtyFiveSquare Website/thirtyfivesquare/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
-    },{
-      name: 'default-site-plugin',
-      plugin: require('C:/Users/tabit/OneDrive/Documents/ThirtyFiveSquare Website/thirtyfivesquare/gatsby-ssr'),
-      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

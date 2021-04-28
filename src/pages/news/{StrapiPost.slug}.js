@@ -2,9 +2,8 @@ import React from 'react';
 import {graphql} from 'gatsby';
 import {NewsLayout} from '../../components';
 
-export default function News({data}) {
+export default function Post({data}) {
     const post = data.strapiPost;
-
     return (
         <NewsLayout post={post}/>
     );
