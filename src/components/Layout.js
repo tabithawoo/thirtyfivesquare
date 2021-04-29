@@ -9,7 +9,12 @@ const useStyles = makeStyles({
   layoutContainer: {
     position: 'relative',
     minHeight: '100vh',
-    paddingBottom: '30px'
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: '60px'
+    },
+    [theme.breakpoints.up('sm')]: {
+      paddingBottom: '35px'
+    }
   },
 });
 
@@ -18,7 +23,9 @@ export function Layout({children}) {
   return (
     <>
     <Helmet>
+    <meta charSet="utf-8" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+    <title>Thirty Five Square</title>
     </Helmet>
     <ThemeProvider theme={HomeTheme}>
       <CssBaseline/>

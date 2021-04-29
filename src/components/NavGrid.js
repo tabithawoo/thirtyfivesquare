@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
   headerStyle: {
     position: 'relative',
     bottom: '60%',
+    display: 'block'
   },
   navBlockImage: {
     height: '64vh',
@@ -44,22 +45,22 @@ const useStyles = makeStyles(theme => ({
   },
   homeBlockImage: {
     position: 'absolute',    
+    objectFit: 'scale-down',
     [theme.breakpoints.down('sm')]: {
-      width: '90vw',
-      maxWidth: '360px',
+      height: '60vh',
+      maxWidth: '90vw',
       left: '5px',
-      top: 'calc(60vh - 250px)',
+      top: 'calc(3vh + 30px)',
     },
     [theme.breakpoints.up('sm')]: {
-      width: '360px',
+      height: '60vh',
       left: '15px',
-      top: '60px',
+      top: 'calc(3vh + 30px)',
     },
     [theme.breakpoints.up('md')]: {
       height: '50vh',
-      width: 'auto',
       left: '50px',
-      top: '90px',
+      top: 'calc(10vh + 30px)',
     }, 
   },
   mainLogo: {
@@ -68,7 +69,9 @@ const useStyles = makeStyles(theme => ({
     bottom: 0,
     [theme.breakpoints.down('sm')]: {    
       width: '95vw',
-      maxWidth: '380px',
+      maxWidth: '390px',
+      maxHeight: '64vh',
+      objectFit: 'scale-down',
       left: 0,
       right: 0,
       margin: 'auto',
@@ -76,7 +79,8 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       height: '64vh',
       width: 'auto',
-      maxWidth: '440px',
+      maxWidth: '460px',
+      objectFit: 'scale-down',
       right: theme.spacing(0.5),
     }
   }
@@ -95,23 +99,23 @@ export function NavGrid() {
               ease: 'linear',
               duration: 2,
           }}>
-        <img className={classes.homeBlockImage} src={HomeImage} alt="Duck"/>       
+        <img className={classes.homeBlockImage} src={HomeImage} alt=""/>       
         </motion.div>
         </Grid>       
         <Grid item xs={12} md={2} className={classes.newsBlock}>
-        <img className={classes.navBlockImage} src={NewsImage} alt="Bike"/>
+        <img className={classes.navBlockImage} src={NewsImage} alt=""/>
           <Link component={GatsbyLink} to='/news' className={classes.newsLink}>
             <Typography className={classes.headerStyle} variant='h3' align='center'>News</Typography>
           </Link>
         </Grid>
           <Grid item xs={12} md={2} className={classes.aboutBlock}>
-          <img className={classes.navBlockImage} src={AboutImage} alt="Cactus"/>
+          <img className={classes.navBlockImage} src={AboutImage} alt=""/>
             <Link component={GatsbyLink} to='/about' color='primary'>
               <Typography className={classes.headerStyle} variant='h3' align='center'>About</Typography>
             </Link>
           </Grid>
         <Grid item xs={12} md={2} className={classes.workBlock}>
-          <img className={classes.navBlockImage} src={WorkImage} alt="Vase"/>
+          <img className={classes.navBlockImage} src={WorkImage} alt=""/>
           <Link component={GatsbyLink} to='/work' color='inherit'>
             <Typography className={classes.headerStyle} variant='h3' align='center'>
               Work

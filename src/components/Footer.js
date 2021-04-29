@@ -6,9 +6,14 @@ import {Facebook,Instagram} from '@material-ui/icons/'
 
 const useStyles = makeStyles(theme => ({
     footer: {
-      height: '25px',
       top: 'auto',
       bottom: 0,
+      [theme.breakpoints.down('sm')]: {
+        height: '55px',
+      },
+      [theme.breakpoints.up('sm')]: {
+        height: '30px',
+      }
     },
     innerFooter: {
         display: 'flex',
