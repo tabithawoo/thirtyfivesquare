@@ -9,12 +9,7 @@ const useStyles = makeStyles({
   layoutContainer: {
     position: 'relative',
     minHeight: '100vh',
-    [theme.breakpoints.down('sm')]: {
       paddingBottom: '60px'
-    },
-    [theme.breakpoints.up('sm')]: {
-      paddingBottom: '35px'
-    }
   },
 });
 
