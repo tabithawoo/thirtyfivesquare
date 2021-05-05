@@ -9,7 +9,7 @@ var React = _interopRequireWildcard(require("react"));
 
 var _errorBoundary = require("./components/error-boundary");
 
-var _portal = require("./components/portal");
+var _shadowPortal = require("../shadow-portal");
 
 var _style = require("./style");
 
@@ -147,7 +147,9 @@ function DevOverlay({
 
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_errorBoundary.ErrorBoundary, {
     hasErrors: hasErrors
-  }, children !== null && children !== void 0 ? children : null), hasErrors ? /*#__PURE__*/React.createElement(_portal.ShadowPortal, null, /*#__PURE__*/React.createElement(_style.Style, null), /*#__PURE__*/React.createElement(ErrorComponent, null)) : undefined);
+  }, children !== null && children !== void 0 ? children : null), hasErrors ? /*#__PURE__*/React.createElement(_shadowPortal.ShadowPortal, {
+    identifier: "gatsby-fast-refresh"
+  }, /*#__PURE__*/React.createElement(_style.Style, null), /*#__PURE__*/React.createElement(ErrorComponent, null)) : undefined);
 }
 
 var _default = DevOverlay;

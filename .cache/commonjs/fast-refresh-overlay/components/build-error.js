@@ -26,6 +26,13 @@ function BuildError({
   const decoded = (0, _utils.prettifyStack)(error);
   const [filePath] = decoded;
   const file = filePath.content.split(`\n`)[0];
+  const lineMatch = filePath.content.match(/\((\d+)[^)]+\)/);
+  let line = 1;
+
+  if (lineMatch) {
+    line = lineMatch[1];
+  }
+
   return /*#__PURE__*/React.createElement(_overlay.Overlay, null, /*#__PURE__*/React.createElement(_overlay.Header, {
     "data-gatsby-error-type": "build-error"
   }, /*#__PURE__*/React.createElement("div", {
@@ -33,7 +40,7 @@ function BuildError({
   }, /*#__PURE__*/React.createElement("h1", {
     id: "gatsby-overlay-labelledby"
   }, "Failed to compile"), /*#__PURE__*/React.createElement("span", null, file)), /*#__PURE__*/React.createElement(_overlay.HeaderOpenClose, {
-    open: () => (0, _utils.openInEditor)(file, 1),
+    open: () => (0, _utils.openInEditor)(file, line),
     dismiss: false
   })), /*#__PURE__*/React.createElement(_overlay.Body, null, /*#__PURE__*/React.createElement("h2", null, "Source"), /*#__PURE__*/React.createElement(_codeFrame.CodeFrame, {
     decoded: decoded

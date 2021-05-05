@@ -45,7 +45,7 @@ window.___loader = _loader.publicLoader;
 (0, _apiRunnerBrowser.apiRunnerAsync)(`onClientEntry`).then(() => {
   // Let plugins register a service worker. The plugin just needs
   // to return true.
-  if ((0, _apiRunnerBrowser.apiRunner)(`registerServiceWorker`).length > 0) {
+  if ((0, _apiRunnerBrowser.apiRunner)(`registerServiceWorker`).filter(Boolean).length > 0) {
     require(`./register-service-worker`);
   } // In gatsby v2 if Router is used in page using matchPaths
   // paths need to contain full path.

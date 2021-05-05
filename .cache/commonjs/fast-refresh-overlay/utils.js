@@ -39,7 +39,7 @@ function prettifyStack(errorInformation) {
 }
 
 function openInEditor(file, lineNumber = 1) {
-  window.fetch(`/__open-stack-frame-in-editor?fileName=` + window.encodeURIComponent(file) + `&lineNumber=` + window.encodeURIComponent(lineNumber));
+  fetch(`/__open-stack-frame-in-editor?fileName=` + window.encodeURIComponent(file) + `&lineNumber=` + window.encodeURIComponent(lineNumber));
 }
 
 function getCodeFrameInformation(stackTrace) {

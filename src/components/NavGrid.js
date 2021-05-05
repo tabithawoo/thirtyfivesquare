@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
   headerStyle: {
     position: 'relative',
     bottom: '60%',
-    display: 'block'
   },
   navBlockImage: {
     height: '64vh',
@@ -104,23 +103,25 @@ export function NavGrid() {
         </Grid>       
         <Grid item xs={12} md={2} className={classes.newsBlock}>
         <img className={classes.navBlockImage} src={NewsImage} alt=""/>
-          <Link component={GatsbyLink} to='/news' className={classes.newsLink}>
-            <Typography className={classes.headerStyle} variant='h3' align='center'>News</Typography>
-          </Link>
+        <Typography className={classes.headerStyle} variant='h3' align='center'>
+          <Link component={GatsbyLink} to='/news' className={classes.newsLink}>News</Link>
+        </Typography>         
         </Grid>
           <Grid item xs={12} md={2} className={classes.aboutBlock}>
           <img className={classes.navBlockImage} src={AboutImage} alt=""/>
-            <Link component={GatsbyLink} to='/about' color='primary'>
-              <Typography className={classes.headerStyle} variant='h3' align='center'>About</Typography>
+          <Typography className={classes.headerStyle} variant='h3' align='center'>
+            <Link component={GatsbyLink} to='/about' color='primary'>             
+              About
             </Link>
+            </Typography>
           </Grid>
         <Grid item xs={12} md={2} className={classes.workBlock}>
           <img className={classes.navBlockImage} src={WorkImage} alt=""/>
-          <Link component={GatsbyLink} to='/work' color='inherit'>
             <Typography className={classes.headerStyle} variant='h3' align='center'>
+            <Link component={GatsbyLink} to='/work' color='inherit'>
               Work
+              </Link>
             </Typography>
-          </Link>
         </Grid>
     </Grid>
     );

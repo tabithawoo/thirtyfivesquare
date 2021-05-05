@@ -17,10 +17,13 @@ const useStyles = makeStyles(theme => ({
     },
     innerFooter: {
         display: 'flex',
-        justifyContent: 'center'
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     socialIcons:{
       padding: '0px',
+      margin: '2px',
       color: '#FAFAFA',
     }
   }));

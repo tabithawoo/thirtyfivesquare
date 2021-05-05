@@ -7,14 +7,11 @@ exports.Style = void 0;
 
 var React = _interopRequireWildcard(require("react"));
 
-function css(strings, ...keys) {
-  const lastIndex = strings.length - 1;
-  return strings.slice(0, lastIndex).reduce((p, s, i) => p + s + keys[i], ``) + strings[lastIndex];
-}
+var _cssToObject = require("../css-to-object");
 
 const Style = () => /*#__PURE__*/React.createElement("style", {
   dangerouslySetInnerHTML: {
-    __html: css`
+    __html: (0, _cssToObject.css)`
         :host {
           --color-ansi-selection: rgba(95, 126, 151, 0.48);
           --color-ansi-bg: #fafafa;
@@ -49,8 +46,8 @@ const Style = () => /*#__PURE__*/React.createElement("style", {
           --codeFrame-color: #414141;
           --codeFrame-button-bg: white;
           --radii: 5px;
-          --z-index-backdrop: 8000;
-          --z-index-overlay: 9000;
+          --z-index-backdrop: 9000;
+          --z-index-overlay: 10000;
           --space: 1.5em;
           --space-sm: 1em;
           --space-lg: 2.5em;

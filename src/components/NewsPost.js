@@ -38,7 +38,6 @@ export function NewsPost({post}) {
       <Box mt={3} mb={10}>
           <ReactMarkdown source={post.content} className={classes.post}/>
       </Box>
-      <img src={post.cover.url} alt={post.title} className={classes.coverImage}/>
     </Box>
     );
 }

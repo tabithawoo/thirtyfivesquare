@@ -16,9 +16,6 @@ export const query = graphql`
             title
             content
             published
-            cover {
-                url
-            }
         }
     }
 `

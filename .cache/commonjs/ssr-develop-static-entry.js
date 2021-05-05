@@ -13,7 +13,7 @@ var _server = require("react-dom/server");
 
 var _lodash = require("lodash");
 
-var _path = require("path");
+var _path = _interopRequireDefault(require("path"));
 
 var _apiRunnerSsr = _interopRequireDefault(require("./api-runner-ssr"));
 
@@ -35,7 +35,17 @@ const testRequireError = (moduleName, err) => {
   return regex.test(firstLine);
 };
 
-const stats = JSON.parse(_fs.default.readFileSync(`${process.cwd()}/public/webpack.stats.json`, `utf-8`));
+let cachedStats;
+
+const getStats = publicDir => {
+  if (cachedStats) {
+    return cachedStats;
+  } else {
+    cachedStats = JSON.parse(_fs.default.readFileSync(_path.default.join(publicDir, `webpack.stats.json`), `utf-8`));
+    return cachedStats;
+  }
+};
+
 let Html;
 
 try {
@@ -51,7 +61,7 @@ try {
 
 Html = Html && Html.__esModule ? Html.default : Html;
 
-var _default = (pagePath, isClientOnlyPage, callback) => {
+var _default = (pagePath, isClientOnlyPage, publicDir, callback) => {
   let bodyHtml = ``;
   let headComponents = [/*#__PURE__*/_react.default.createElement("meta", {
     key: "environment",
@@ -113,12 +123,13 @@ var _default = (pagePath, isClientOnlyPage, callback) => {
 
     const getPageDataPath = path => {
       const fixedPagePath = path === `/` ? `index` : path;
-      return (0, _path.join)(`page-data`, fixedPagePath, `page-data.json`);
+      return _path.default.join(`page-data`, fixedPagePath, `page-data.json`);
     };
 
     const getPageData = pagePath => {
       const pageDataPath = getPageDataPath(pagePath);
-      const absolutePageDataPath = (0, _path.join)(process.cwd(), `public`, pageDataPath);
+
+      const absolutePageDataPath = _path.default.join(publicDir, pageDataPath);
 
       const pageDataJson = _fs.default.readFileSync(absolutePageDataPath, `utf8`);
 
@@ -136,6 +147,7 @@ var _default = (pagePath, isClientOnlyPage, callback) => {
     } = pageData;
     let scriptsAndStyles = (0, _lodash.flatten)([`commons`].map(chunkKey => {
       const fetchKey = `assetsByChunkName[${chunkKey}]`;
+      const stats = getStats(publicDir);
       let chunks = (0, _lodash.get)(stats, fetchKey);
       const namedChunkGroups = (0, _lodash.get)(stats, `namedChunkGroups`);
 
