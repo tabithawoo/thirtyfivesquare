@@ -25,6 +25,9 @@ const useStyles = makeStyles(theme => ({
     '& img': {
       margins: 'auto',
       width: '200px',
+    },
+    '& h5': {
+      fontSize: '1.2em'
     }
   }
 }));

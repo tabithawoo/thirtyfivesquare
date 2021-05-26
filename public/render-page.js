@@ -38420,7 +38420,7 @@ var _postcss = _interopRequireDefault(__webpack_require__(/*! postcss */ "./node
 
 var _autoprefixer = _interopRequireDefault(__webpack_require__(/*! autoprefixer */ "./node_modules/autoprefixer/lib/autoprefixer.js"));
 
-var _package = __webpack_require__(/*! ../../../package.json */ "./package.json");
+var _package = __webpack_require__(/*! ../../package.json */ "./package.json");
 
 function _default(css, pathname) {
   var prefixer = (0, _postcss.default)([(0, _autoprefixer.default)({
@@ -56198,29 +56198,29 @@ function warning(condition, message) {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"thirtyfivesquare","version":"0.1.0","private":true,"dependencies":{"@material-ui/core":"^4.11.3","@material-ui/icons":"^4.11.2","@testing-library/jest-dom":"^5.11.9","@testing-library/react":"^11.2.5","@testing-library/user-event":"^12.7.3","babel-plugin-styled-components":"^1.12.0","framer-motion":"^4.0.3","gatsby":"^3.3.1","gatsby-plugin-material-ui":"^3.0.1","gatsby-plugin-react-helmet":"^4.3.0","gatsby-plugin-styled-components":"^4.3.0","gatsby-source-strapi":"^1.0.0-alpha.1","graphql":"^15.5.0","moment":"^2.29.1","react":"^17.0.1","react-dom":"^17.0.1","react-helmet":"^6.1.0","react-markdown":"^5.0.3","react-moment":"^1.1.1","react-router-dom":"^5.2.0","react-scripts":"4.0.3","styled-components":"^5.2.3","web-vitals":"^1.1.0"},"scripts":{"start":"react-scripts start","build":"react-scripts build","test":"react-scripts test","eject":"react-scripts eject"},"eslintConfig":{"extends":["react-app","react-app/jest"]},"browserslist":[">0.2%","not dead","not op_mini all"]}');
+module.exports = JSON.parse('{"name":"thirtyfivesquare","version":"0.1.0","private":true,"dependencies":{"@material-ui/core":"^4.11.3","@material-ui/icons":"^4.11.2","@testing-library/jest-dom":"^5.11.9","babel-plugin-styled-components":"^1.12.0","framer-motion":"^4.0.3","gatsby":"^3.3.1","gatsby-plugin-material-ui":"^3.0.1","gatsby-plugin-react-helmet":"^4.3.0","gatsby-plugin-styled-components":"^4.3.0","gatsby-source-strapi":"^1.0.0-alpha.1","graphql":"^15.5.0","moment":"^2.29.1","react":"^17.0.1","react-dom":"^17.0.1","react-helmet":"^6.1.0","react-markdown":"^5.0.3","react-moment":"^1.1.1","react-scripts":"4.0.3","styled-components":"^5.2.3"},"scripts":{"start":"react-scripts start","build":"react-scripts build","test":"react-scripts test","eject":"react-scripts eject"},"eslintConfig":{"extends":["react-app","react-app/jest"]},"browserslist":[">0.2%","not dead","not op_mini all"]}');
 
 /***/ }),
 
 /***/ "react-dom/server":
-/*!**************************************************************************************!*\
-  !*** external "/Users/tabithawoo/thirtyfivesquare/node_modules/react-dom/server.js" ***!
-  \**************************************************************************************/
+/*!********************************************************************************************************************************!*\
+  !*** external "C:\\Users\\tabit\\OneDrive\\Documents\\ThirtyFiveSquare\\thirtyfivesquare\\node_modules\\react-dom\\server.js" ***!
+  \********************************************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/tabithawoo/thirtyfivesquare/node_modules/react-dom/server.js");;
+module.exports = require("C:\\Users\\tabit\\OneDrive\\Documents\\ThirtyFiveSquare\\thirtyfivesquare\\node_modules\\react-dom\\server.js");;
 
 /***/ }),
 
 /***/ "react":
-/*!*********************************************************************************!*\
-  !*** external "/Users/tabithawoo/thirtyfivesquare/node_modules/react/index.js" ***!
-  \*********************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** external "C:\\Users\\tabit\\OneDrive\\Documents\\ThirtyFiveSquare\\thirtyfivesquare\\node_modules\\react\\index.js" ***!
+  \***************************************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/tabithawoo/thirtyfivesquare/node_modules/react/index.js");;
+module.exports = require("C:\\Users\\tabit\\OneDrive\\Documents\\ThirtyFiveSquare\\thirtyfivesquare\\node_modules\\react\\index.js");;
 
 /***/ }),
 

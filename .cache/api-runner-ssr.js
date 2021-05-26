@@ -1,14 +1,14 @@
 var plugins = [{
       name: 'gatsby-plugin-material-ui',
-      plugin: require('/Users/tabithawoo/thirtyfivesquare/node_modules/gatsby-plugin-material-ui/gatsby-ssr'),
+      plugin: require('C:/Users/tabit/OneDrive/Documents/ThirtyFiveSquare/thirtyfivesquare/node_modules/gatsby-plugin-material-ui/gatsby-ssr'),
       options: {"plugins":[],"stylesProvider":{"injectFirst":true}},
     },{
       name: 'gatsby-plugin-styled-components',
-      plugin: require('/Users/tabithawoo/thirtyfivesquare/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('C:/Users/tabit/OneDrive/Documents/ThirtyFiveSquare/thirtyfivesquare/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[],"displayName":true,"fileName":true,"minify":true,"namespace":"","transpileTemplateLiterals":true,"topLevelImportPaths":[],"pure":false},
     },{
       name: 'gatsby-plugin-react-helmet',
-      plugin: require('/Users/tabithawoo/thirtyfivesquare/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('C:/Users/tabit/OneDrive/Documents/ThirtyFiveSquare/thirtyfivesquare/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

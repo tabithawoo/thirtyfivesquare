@@ -6,7 +6,7 @@ export function ProductionDetails({production}) {
     let collabNums = production.collaborators.length;
     let collabsHalf = Math.floor(collabNums/2);
     let collabsLeft = production.collaborators.slice(0,collabsHalf);
-    let collabsRight = production.collaborators.slice(collabsHalf, collabNums-1);
+    let collabsRight = production.collaborators.slice(collabsHalf, collabNums);
 return(
     <Box>
     <Typography variant='h6'>{production.title}</Typography>

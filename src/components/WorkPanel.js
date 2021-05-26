@@ -26,7 +26,7 @@ export function WorkPanel({productions,work}) {
                 return (
                 <Box mt={{xs: 2, sm: 7}} mx={{xs: 2, sm: 4}}>
                 <Typography variant='body1'>{review.snippet}</Typography>
-                <Typography variant='subtitle1' color='primary'>{review.author}, <Link to={review.source}>{review.publication}</Link></Typography>
+                <Typography variant='subtitle1' color='primary'>{review.author}, <Link href={review.source}>{review.publication}</Link></Typography>
                 </Box>
                 );
             })}
@@ -43,7 +43,7 @@ export function WorkPanel({productions,work}) {
                 <Box mb={2}>
                 {work.presses.map((p)=>{
                     return(
-                        <Typography variant='body1'>{p.publication}: <Link to={p.url}>{p.title}</Link></Typography>
+                        <Typography variant='body1'>{p.publication}: <Link href={p.url}>{p.title}</Link></Typography>
                     );
                 })}
                 </Box> 
