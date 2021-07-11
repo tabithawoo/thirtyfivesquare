@@ -13,7 +13,7 @@ module.exports = {
       options: {
       apiURL: `https://tfs-strapi.herokuapp.com`,
       queryLimit: 1000,
-      contentTypes: [
+      collectionTypes: [
         `post`,
         `work`,
         `press`,
