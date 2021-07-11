@@ -6,7 +6,10 @@ import {AboutTheme} from '../themes';
 
 export default function About() {
         return (    
-            <Layout>
+            <Layout
+                pageTitle="About" 
+                title="About"  
+            >
             <Page sectionTheme={AboutTheme} title='About' headerImage={AboutImage}>
             <Box p={{xs: 2, sm: 4}}>
             <Typography variant='h6'>            

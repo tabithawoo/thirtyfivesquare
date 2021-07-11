@@ -6,7 +6,12 @@ import {NewsTheme} from '../themes';
 
 export function NewsLayout({post}) {
     return (
-            <Layout>
+            <Layout
+                pageTitle="News" 
+                title={post.title} 
+                imageUrl={post.cover.url} 
+                imageAlt=""            
+            >
             <Page sectionTheme={NewsTheme} title='News' headerImage={NewsImage}>
                 <Grid container>
                     <Grid item xs={12} md={8}>

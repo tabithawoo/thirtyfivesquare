@@ -13,7 +13,10 @@ const useStyles = makeStyles(theme => ({
 export default function Index() {
     const classes = useStyles();
     return (
-        <Layout>
+        <Layout
+            pageTitle="Home" 
+            title="Home"  
+        >
         <Grid container>
         <Grid item xs={12}>
             <NavGrid/>

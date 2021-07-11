@@ -1,5 +1,6 @@
 export * from './Contact';
 export * from './Footer';
+export * from './Head';
 export * from './Header';
 export * from './Layout';
 export * from './MiniNavGrid';
