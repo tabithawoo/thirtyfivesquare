@@ -11,6 +11,8 @@ var _stripPrefix = _interopRequireDefault(require("./strip-prefix"));
 
 var _normalizePagePath = _interopRequireDefault(require("./normalize-page-path"));
 
+var _redirectUtils = require("./redirect-utils.js");
+
 const pathCache = new Map();
 let matchPaths = [];
 
@@ -122,6 +124,12 @@ const findPath = rawPathname => {
 
   if (pathCache.has(trimmedPathname)) {
     return pathCache.get(trimmedPathname);
+  }
+
+  const redirect = (0, _redirectUtils.maybeGetBrowserRedirect)(rawPathname);
+
+  if (redirect) {
+    return findPath(redirect.toPath);
   }
 
   let foundPath = findMatchPath(trimmedPathname);

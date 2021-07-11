@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-      apiURL: `http://tfs-strapi.herokuapp.com`,
+      apiURL: `https://tfs-strapi.herokuapp.com`,
       queryLimit: 1000,
       contentTypes: [
         `post`,
@@ -29,6 +29,7 @@ module.exports = {
 siteMetadata: {
   title: 'Thirty Five Square',
   description: 'Thirty Five Square is a Sydney-based theatre company inspired by cities and the people who live in them.',
-  author: 'Tabitha Woo'
+  author: 'Tabitha Woo',
+  siteUrl: 'https://www.thirtyfivesquare.com'
 }
 };
