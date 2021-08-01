@@ -3,7 +3,7 @@ import NewsImage from "../images/NewsLight.png";
 import { Layout, NewsArchive, NewsPost, Page } from "./";
 import { NewsTheme } from "../themes";
 
-export function NewsLayout({ post }) {
+export function NewsLayout({post}) {
   return (
     <Layout>
       <Page sectionTheme={NewsTheme} title="News" headerImage={NewsImage}>

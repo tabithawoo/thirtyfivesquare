@@ -9,7 +9,10 @@ export default function Work({data}) {
     const allWorks = data.allWorks.nodes;
     const allProductions = data.allStrapiProduction.nodes;
     return (
-        <Layout>
+        <Layout
+          pageTitle="Work" 
+          title="Work"  
+        >
         <Page sectionTheme={WorkTheme} title='Work' headerImage={HeaderImage}>
         <WorkTabs tabs={workList} panels={allWorks} productions={allProductions}/>
         </Page>
