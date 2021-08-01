@@ -4,6 +4,7 @@ export * from './Header';
 export * from './Layout';
 export * from './MiniNavGrid';
 export * from './NavGrid';
+export * from './NewsArchive';
 export * from './NewsLayout';
 export * from './NewsList';
 export * from './NewsPost';
