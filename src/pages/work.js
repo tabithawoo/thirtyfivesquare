@@ -11,7 +11,6 @@ export default function Work({data}) {
     return (
         <Layout
           pageTitle="Work" 
-          title="Work"  
         >
         <Page sectionTheme={WorkTheme} title='Work' headerImage={HeaderImage}>
         <WorkTabs tabs={workList} panels={allWorks} productions={allProductions}/>

@@ -15,7 +15,6 @@ export default function Index() {
     return (
         <Layout
             pageTitle="Home" 
-            title="Home"  
         >
         <Grid container>
         <Grid item xs={12}>

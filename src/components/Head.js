@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import logo from '../images/logos/logo-main.png';
 import favicon from '../images/logos/favicon.ico';
 
-export function Head({ pageTitle, title, imageUrl, imageAlt }) {
+export function Head({ pageTitle, imageUrl, imageAlt }) {
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -31,12 +31,12 @@ export function Head({ pageTitle, title, imageUrl, imageAlt }) {
                 <link rel="icon" href={favicon} />
 ​
                 <meta name="twitter:card" content="summary_large_image"></meta>
-                <meta name="twitter:title" content={title}></meta>
+                <meta name="twitter:title" content={pageTitle}></meta>
                 <meta name="twitter:image" content={imageUrl}></meta>
 ​
                 <meta property="og:locale" content="en_GB" />
                 <meta property="og:site_name" content={data.site.siteMetadata.title} />
-                <meta property="og:title" content={title}></meta>
+                <meta property="og:title" content={pageTitle}></meta>
                 <meta property="og:image" content={imageUrl}></meta>
                 <meta property="og:image:alt" content={imageAlt}></meta>
             </Helmet>

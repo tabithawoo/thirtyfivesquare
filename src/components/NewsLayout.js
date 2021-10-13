@@ -5,7 +5,9 @@ import { NewsTheme } from "../themes";
 
 export function NewsLayout({post}) {
   return (
-    <Layout>
+    <Layout 
+      pageTitle="News" 
+    >
       <Page sectionTheme={NewsTheme} title="News" headerImage={NewsImage}>
         {post ? <NewsPost post={post} /> : <NewsArchive />}
       </Page>

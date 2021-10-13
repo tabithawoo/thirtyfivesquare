@@ -8,7 +8,6 @@ export default function About() {
         return (    
             <Layout
                 pageTitle="About" 
-                title="About"  
             >
             <Page sectionTheme={AboutTheme} title='About' headerImage={AboutImage}>
             <Box p={{xs: 2, sm: 4}}>
