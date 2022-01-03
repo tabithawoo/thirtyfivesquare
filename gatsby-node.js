@@ -1,4 +1,4 @@
-const { node } = require("eslint-webpack-plugin/node_modules/webpack")
+const { node } = require("eslint-webpack-plugin/node_modules/webpack");
 const crypto = require("crypto");
 
 module.exports.onCreateNode = async({node, actions, createNodeId}) => {
