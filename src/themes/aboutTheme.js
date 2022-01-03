@@ -1,8 +1,8 @@
-import {createMuiTheme} from '@material-ui/core/styles';
+import {createTheme} from '@material-ui/core/styles';
 import mainTheme from './mainTheme';
 
 
-const aboutTheme = createMuiTheme(mainTheme, {
+const aboutTheme = createTheme(mainTheme, {
     palette: {
         primary: {
             light: '#fcedca',

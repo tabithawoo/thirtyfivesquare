@@ -1,7 +1,7 @@
-import {createMuiTheme} from '@material-ui/core/styles';
+import {createTheme} from '@material-ui/core/styles';
 import mainTheme from './mainTheme';
 
-const homeTheme = createMuiTheme(mainTheme,{
+const homeTheme = createTheme(mainTheme,{
     palette: {
         primary: {
             main: '#F35C5B'
