@@ -25,6 +25,7 @@ module.exports = {
     },
       `gatsby-plugin-styled-components`,
       `gatsby-plugin-react-helmet`,
+      `gatsby-plugin-mdx`
   ],
 siteMetadata: {
   title: 'Thirty Five Square',

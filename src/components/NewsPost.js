@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMarkdown from "react-markdown";
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import Moment from "react-moment";
 import {Link as GatsbyLink} from 'gatsby';
 import {NewsList} from './';
@@ -42,8 +42,8 @@ export function NewsPost({post}) {
           <Box mt={4} mx={{xs: 2, sm: 5}} mb={10}>
             <Typography variant='h2'>{post.title}</Typography>
             <Typography variant='body1' color='primary'><Moment format="Do MMMM YYYY">{post.published}</Moment></Typography>
-            <Box mt={3} mb={10}>
-              <ReactMarkdown source={post.content} className={classes.post}/>
+            <Box className={classes.post} mt={3} mb={10}>
+              <MDXRenderer>{post.childStrapiPostMdxContent.childMdx.body}</MDXRenderer>
             </Box>
           </Box>                       
         </Grid>

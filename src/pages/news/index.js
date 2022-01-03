@@ -11,14 +11,18 @@ export default function News({data}) {
 
 export const query = graphql`
 {
-      newestPost: allStrapiPost(sort: {fields: id, order: DESC}, limit: 1) {
-        nodes {
-          title
-          published
-          cover {
-            url
-          }
-          content
+  newestPost: allStrapiPost(sort: {fields: id, order: DESC}, limit: 1) {
+    nodes {
+      title
+      published
+      cover {
+        url
+      }
+      childStrapiPostMdxContent {
+        childMdx {
+          body
         }
       }
+    }
+  }
 }`
