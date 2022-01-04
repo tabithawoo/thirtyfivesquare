@@ -1,7 +1,6 @@
 import React from 'react';
-import {makeStyles,ThemeProvider} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import {HomeTheme} from '../themes';
 import {Footer,Head,Header} from './';
 
 const useStyles = makeStyles({
@@ -18,14 +17,12 @@ export function Layout(props) {
   return (
     <>
     <Head {...metadata}/>
-    <ThemeProvider theme={HomeTheme}>
       <CssBaseline/>
       <div className={classes.layoutContainer}>
       <Header/>
       {children}
       <Footer/>
     </div>
-    </ThemeProvider>
     </>
   );
 }
