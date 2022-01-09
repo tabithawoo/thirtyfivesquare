@@ -1,4 +1,4 @@
-import { createTheme,responsiveFontSizes } from "@material-ui/core/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 let mainTheme = createTheme({
   palette: {
@@ -34,14 +34,25 @@ let mainTheme = createTheme({
         lineHeight: '1.3em'
       }
     },
-  overrides: {
+  components: {
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          marginTop: '10px',
+          marginBottom: '10px',
+          borderColor: '#444444',
+        }
+      }
+    },
     MuiTab: {
-      root: {
-        textTransform: 'none',
-        fontWeight: 600,
-        paddingTop: '16px',
-        paddingBottom: '16px'
-      },
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          fontWeight: 600,
+          paddingTop: '16px',
+          paddingBottom: '16px'
+        },
+      }
     }
   }  
 });

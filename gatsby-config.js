@@ -1,14 +1,6 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-          stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-strapi`,
       options: {
       apiURL: `https://tfs-strapi.herokuapp.com`,
@@ -23,6 +15,7 @@ module.exports = {
       ],
       }
     },
+      `gatsby-plugin-material-ui`,
       `gatsby-plugin-styled-components`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-mdx`

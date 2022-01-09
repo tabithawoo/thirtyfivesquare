@@ -1,75 +1,61 @@
 import React from "react";
 import Moment from "react-moment";
 import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby";
-import { Grid, Link, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(2),
-    },
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(5),
-    },
-  },
-  thumbnail: {
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    height: "150px",
-    borderRadius: "4px",
-    [theme.breakpoints.up("sm")]: {
-      marginBottom: theme.spacing(3),
-    },
-  },
-  title: {
-    borderRadius: '4px',
-    [theme.breakpoints.down("xs")]: {
-      marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(2),
-    },
-    [theme.breakpoints.up("sm")]: {
-      paddingLeft: theme.spacing(3),
-      marginBottom: theme.spacing(3),
-      "&:hover": {
-        backgroundColor: theme.palette.primary.light,
-      },
-    },
-  },
-}));
+import { Grid, Link, Typography } from "@mui/material";
 
 export function NewsArchive() {
-  const classes = useStyles();
   const data = useStaticQuery(graphql`
     query archivePosts {
-        allStrapiPost(sort: { fields: id, order: DESC }) {
+      allStrapiPost(sort: { fields: id, order: DESC }) {
         nodes {
-            slug
-            title
-            published
-            cover {
+          slug
+          title
+          published
+          cover {
             url
-            }
+          }
         }
-        }
+      }
     }
-    `);
+  `);
   const posts = data.allStrapiPost.nodes;
   return (
-    <Grid container className={classes.container}>
+    <Grid container sx={{ p: { xs: 1, md: 5 } }}>
       {posts.map((post, key) => {
         return (
           <>
             <Grid
               item
               xs={12}
-              sm={3}
-              className={classes.thumbnail}
-              style={{ backgroundImage: `url(${post.cover.url})` }}
+              md={3}
+              sx={{
+                background: `url(${post.cover.url}) center/cover no-repeat`,
+                height: "150px",
+                borderRadius: "4px",
+                zIndex: 10,
+                mb: { md: 3 },
+              }}
             ></Grid>
-            <Grid item xs={12} sm={9} className={classes.title}>
-              <Link component={GatsbyLink} to={`/news/${post.slug}`}>
+            <Grid
+              item
+              xs={12}
+              md={9}
+              sx={{
+                borderRadius: "0 4px 4px 0",
+                height: { xs: "70px", md: "150px" },
+                mt: { xs: 1, md: 0 },
+                mb: { xs: 2, md: 3 },
+                ml: { md: "-4px" },
+                pt: { md: 1 },
+                pl: { md: 3 },
+                "&:hover": { backgroundColor: "primary.light" },
+              }}
+            >
+              <Link
+                component={GatsbyLink}
+                to={`/news/${post.slug}`}
+                underline="hover"
+              >
                 <Typography variant="h5">{post.title}</Typography>
                 <Typography variant="body1" color="primary">
                   <Moment format="Do MMMM YYYY">{post.published}</Moment>
@@ -82,4 +68,3 @@ export function NewsArchive() {
     </Grid>
   );
 }
-
