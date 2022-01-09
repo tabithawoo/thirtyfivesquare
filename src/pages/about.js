@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box,Typography} from '@material-ui/core';
+import {Box,Typography} from '@mui/material';
 import AboutImage from '../images/AboutCactus.png';
 import { Layout, Page } from '../components';
 import {AboutTheme} from '../themes';

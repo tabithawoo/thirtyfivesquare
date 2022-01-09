@@ -1,9 +1,13 @@
-import React from 'react';
-import {ThemeProvider} from '@material-ui/core/styles';
-import {HomeTheme} from './src/themes';
+import React from "react";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import { HomeTheme } from "./src/themes";
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <ThemeProvider theme={HomeTheme}>{element}</ThemeProvider>
-  )
-}
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={HomeTheme}>
+        {element}
+      </ThemeProvider>
+    </StyledEngineProvider>
+  );
+};

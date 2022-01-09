@@ -1,6 +1,6 @@
 import React from 'react';
-import {Box, Card, Container, Grid, Typography} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
+import {Box, Card, Container, Grid, Typography} from '@mui/material';
+import {makeStyles} from '@mui/styles';
 import {Layout,NavGrid} from '../components';
 
 const useStyles = makeStyles(theme => ({

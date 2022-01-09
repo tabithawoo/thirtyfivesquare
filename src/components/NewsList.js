@@ -7,22 +7,9 @@ import {
   CardMedia,
   Link,
   Typography,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  postCard: {
-    marginBottom: theme.spacing(3),
-    backgroundColor: theme.palette.primary.light,
-  },
-  postHeader: {},
-  postThumbnail: {
-    height: "200px",
-  },
-}));
+} from "@mui/material";
 
 export function NewsList() {
-  const classes = useStyles();
   const data = useStaticQuery(graphql`
     query allPosts {
       allStrapiPost(sort: { fields: id, order: DESC }, limit: 3) {
@@ -39,8 +26,8 @@ export function NewsList() {
   `);
   return data.allStrapiPost.nodes.map((post, key) => {
     return (
-      <Link component={GatsbyLink} to={`/news/${post.slug}`}>
-        <Card className={classes.postCard} elevation={0}>
+      <Link component={GatsbyLink} to={`/news/${post.slug}`} underline="hover">
+        <Card sx={{mb:3,backgroundColor:'primary.light'}} elevation={0}>
           <CardContent>
             <Typography variant="h5" color="primary">
               {post.title}
@@ -52,7 +39,7 @@ export function NewsList() {
           <CardMedia
             component="img"
             src={post.cover.url}
-            className={classes.postThumbnail}
+            sx={{height:'200px'}}
           />
         </Card>
       </Link>

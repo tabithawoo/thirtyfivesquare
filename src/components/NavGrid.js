@@ -1,128 +1,139 @@
-import React from 'react';
-import {Grid,Link,Paper,Typography} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
-import {motion} from 'framer-motion';
-import {Link as GatsbyLink} from 'gatsby';
-import MainLogo from '../images/logos/logo-main.png';
-import HomeImage from '../images/HomeDuck.png';
-import AboutImage from '../images/AboutCactus.png';
-import WorkImage from '../images/WorkCups.png';
-import NewsImage from '../images/NewsLight.png';
+import React from "react";
+import { Box, Grid, Link, Paper, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { Link as GatsbyLink } from "gatsby";
+import MainLogo from "../images/logos/logo-main.png";
+import HomeImage from "../images/HomeDuck.png";
+import AboutImage from "../images/AboutCactus.png";
+import WorkImage from "../images/WorkCups.png";
+import NewsImage from "../images/NewsLight.png";
 
-const useStyles = makeStyles(theme => ({
-  homeBlock: {
-    backgroundImage: 'linear-gradient(#F35C5B, #f78282);',
-    height: '65vh',
-    position: 'relative',
-  },
-  newsBlock: {
-      backgroundImage: 'linear-gradient(#E9590C,#f78143)',
-      overflow: 'hidden',
-      height: '65vh',
-  },
-  newsLink: {
-    color: '#FFFFFF',
-  },
-  aboutBlock: {
-      backgroundImage: 'linear-gradient(#E9C00C,#f6db67)',
-      overflow: 'hidden',
-      height: '65vh'
-  },
-  workBlock: {
-      backgroundImage: 'linear-gradient(#04621B,#1b9c3b)',
-      overflow: 'hidden',
-      height: '65vh'
-  },
-  headerStyle: {
-    position: 'relative',
-    bottom: '60%',
-  },
-  navBlockImage: {
-    height: '64vh',
-    position: 'relative',
-    top: '1vh',
-  },
-  homeBlockImage: {
-    position: 'absolute',    
-    objectFit: 'scale-down',
-    [theme.breakpoints.down('sm')]: {
-      height: '60vh',
-      maxWidth: '90vw',
-      left: '5px',
-      top: 'calc(3vh + 30px)',
-    },
-    [theme.breakpoints.up('sm')]: {
-      height: '60vh',
-      left: '15px',
-      top: 'calc(3vh + 30px)',
-    },
-    [theme.breakpoints.up('md')]: {
-      height: '50vh',
-      left: '50px',
-      top: 'calc(10vh + 30px)',
-    }, 
-  },
-  mainLogo: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    [theme.breakpoints.down('sm')]: {    
-      width: '95vw',
-      maxWidth: '390px',
-      maxHeight: '64vh',
-      objectFit: 'scale-down',
-      left: 0,
-      right: 0,
-      margin: 'auto',
-    },
-    [theme.breakpoints.up('sm')]: {
-      height: '64vh',
-      width: 'auto',
-      maxWidth: '460px',
-      objectFit: 'scale-down',
-      right: theme.spacing(0.5),
-    }
-  }
-}));
+const navImageStyle = { height: "64vh", position: "relative", top: "1vh" },
+  headerStyle = { position: "relative", bottom: "60%" },
+  navBlockStyle = { overflow: "hidden", height: "65vh" };
 
 export function NavGrid() {
-    const classes = useStyles();
-    return (
+  return (
     <Grid container component={Paper} elevation={4}>
-        <Grid item xs={12} md={6} className={classes.homeBlock}>       
-        <img className={classes.mainLogo} src={MainLogo} alt="The Thirty Five Square logo is the business name inside a watercolour square"/>
-        <motion.div 
-          initial={{x: '-120px', y: '0'}} 
-          animate={{x: '0', y: [-50,0,-50,0,-50,0]}} 
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{
+          backgroundImage: "linear-gradient(#F35C5B, #f78282)",
+          height: "65vh",
+          position: "relative",
+        }}
+      >
+        <Box
+          component="img"
+          sx={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: {xs: 0, md: "initial" },
+            right: { xs: 0, md: 0.5 },
+            objectFit: "scale-down",
+            width: { xs: "95vw", md: "auto" },
+            maxWidth: { xs: "390px", md: "460px" },
+            height: { md: "64vh" },
+            maxHeight: { xs: "64vh", md: "initial" },
+            margin: { xs: "auto", md: "initial" },
+          }}
+          src={MainLogo}
+          alt="The Thirty Five Square logo is the business name inside a watercolour square"
+        />
+        <motion.div
+          initial={{ x: "-120px", y: "0" }}
+          animate={{ x: "0", y: [-50, 0, -50, 0, -50, 0] }}
           transition={{
-              ease: 'linear',
-              duration: 2,
-          }}>
-        <img className={classes.homeBlockImage} src={HomeImage} alt=""/>       
+            ease: "linear",
+            duration: 2,
+          }}
+        >
+          <Box
+            component="img"
+            sx={{
+              position: "absolute",
+              objectFit: "scale-down",
+              height: { xs: "60vh", lg: "50vh" },
+              left: { xs: "5px", md: "15px", lg: "50px" },
+              top: { xs: "calc(3vh + 30px)", lg: "calc(10vh + 30px)" },
+              maxWidth: { xs: "90vw", md: "initial" },
+            }}
+            src={HomeImage}
+            alt=""
+          />
         </motion.div>
-        </Grid>       
-        <Grid item xs={12} md={2} className={classes.newsBlock}>
-        <img className={classes.navBlockImage} src={NewsImage} alt=""/>
-        <Typography className={classes.headerStyle} variant='h3' align='center'>
-          <Link component={GatsbyLink} to='/news' className={classes.newsLink}>News</Link>
-        </Typography>         
-        </Grid>
-          <Grid item xs={12} md={2} className={classes.aboutBlock}>
-          <img className={classes.navBlockImage} src={AboutImage} alt=""/>
-          <Typography className={classes.headerStyle} variant='h3' align='center'>
-            <Link component={GatsbyLink} to='/about' color='primary'>             
-              About
-            </Link>
-            </Typography>
-          </Grid>
-        <Grid item xs={12} md={2} className={classes.workBlock}>
-          <img className={classes.navBlockImage} src={WorkImage} alt=""/>
-            <Typography className={classes.headerStyle} variant='h3' align='center'>
-            <Link component={GatsbyLink} to='/work' color='inherit'>
-              Work
-              </Link>
-            </Typography>
-        </Grid>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={2}
+        sx={{
+          ...navBlockStyle,
+          backgroundImage: "linear-gradient(#E9590C,#f78143)",
+        }}
+      >
+        <Box component="img" sx={{ ...navImageStyle }} src={NewsImage} alt="" />
+        <Typography sx={{ ...headerStyle }} variant="h3" align="center">
+          <Link
+            component={GatsbyLink}
+            to="/news"
+            underline="hover"
+            sx={{ color: "#FFFFFF" }}
+          >
+            News
+          </Link>
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={2}
+        sx={{
+          ...navBlockStyle,
+          backgroundImage: "linear-gradient(#E9C00C,#f6db67)",
+        }}
+      >
+        <Box
+          component="img"
+          sx={{ ...navImageStyle }}
+          src={AboutImage}
+          alt=""
+        />
+        <Typography sx={{ ...headerStyle }} variant="h3" align="center">
+          <Link
+            component={GatsbyLink}
+            to="/about"
+            color="primary"
+            underline="hover"
+          >
+            About
+          </Link>
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={2}
+        sx={{
+          ...navBlockStyle,
+          backgroundImage: "linear-gradient(#04621B,#1b9c3b)",
+        }}
+      >
+        <Box component="img" sx={{ ...navImageStyle }} src={WorkImage} alt="" />
+        <Typography sx={{ ...headerStyle }} variant="h3" align="center">
+          <Link
+            component={GatsbyLink}
+            to="/work"
+            color="inherit"
+            underline="hover"
+          >
+            Work
+          </Link>
+        </Typography>
+      </Grid>
     </Grid>
-    );
+  );
 }
