@@ -1,2 +1,0 @@
-(self.webpackChunkthirtyfivesquare=self.webpackChunkthirtyfivesquare||[]).push([[142],{8927:function(t,e,r){"use strict";r.r(e),r.d(e,{default:function(){return n}});var u=r(7294),a=r(5643);function n(t){var e=t.data.strapiPost;return u.createElement(a.JD,{post:e})}}}]);
-//# sourceMappingURL=component---src-pages-news-strapi-post-slug-js-bbdacf4db905f1122083.js.map

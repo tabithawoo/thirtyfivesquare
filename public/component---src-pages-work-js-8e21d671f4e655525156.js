@@ -1,2 +1,0 @@
-(self.webpackChunkthirtyfivesquare=self.webpackChunkthirtyfivesquare||[]).push([[624],{4545:function(e,t,r){"use strict";r.r(t),r.d(t,{default:function(){return u}});var n=r(7294),a=r(5855),s=r(5643),l=r(5711);function u(e){var t=e.data,r=t.workTitles.nodes,u=t.allWorks.nodes,i=t.allStrapiProduction.nodes;return n.createElement(s.Ar,null,n.createElement(s.T3,{sectionTheme:l.ZO,title:"Work",headerImage:a.Z},n.createElement(s.gX,{tabs:r,panels:u,productions:i})))}}}]);
-//# sourceMappingURL=component---src-pages-work-js-8e21d671f4e655525156.js.map
